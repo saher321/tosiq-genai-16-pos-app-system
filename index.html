@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promptly AI - Write High Converting Marketing Content With AI</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons (Lucide React Icons in vanilla HTML) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              orange: '#ff9e3b',
+              amber: '#ffaa40',
+              accent: '#f59e0b',
+              dark: '#08080a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Fluted Pleated Wall Texture with warm amber illumination */
+    .hero-ribbed-container {
+      background-color: #070709;
+      position: relative;
+    }
+
+    /* Fluted ribbed surface on the right half */
+    .hero-ribbed-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 70%;
+      background:
+        /* Vertical fluted panel ridges */
+        repeating-linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.04) 0px,
+          rgba(255, 255, 255, 0.04) 2px,
+          rgba(0, 0, 0, 0.0) 2px,
+          rgba(0, 0, 0, 0.0) 10px,
+          rgba(0, 0, 0, 0.5) 16px,
+          rgba(0, 0, 0, 0.75) 20px
+        ),
+        /* Concentrated amber / copper side glow */
+        radial-gradient(
+          ellipse at 92% 62%,
+          rgba(255, 120, 25, 0.55) 0%,
+          rgba(220, 85, 15, 0.38) 30%,
+          rgba(130, 40, 5, 0.22) 55%,
+          transparent 80%
+        ),
+        /* Ambient bottom light */
+        radial-gradient(
+          ellipse at 75% 95%,
+          rgba(240, 100, 20, 0.3) 0%,
+          transparent 60%
+        );
+      /* Mask out the left side to smoothly blend into pitch black */
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 1) 55%);
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 1) 55%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Dot matrix grid for problem section */
+    .dot-matrix-pattern {
+      background-color: #ffffff;
+      background-image: radial-gradient(rgba(156, 163, 175, 0.4) 1.2px, transparent 1.2px);
+      background-size: 26px 26px;
+    }
+
+    /* Golden-orange gradient for "AI" text */
+    .ai-gradient {
+      background: linear-gradient(135deg, #ffdfa0 0%, #ffaa42 50%, #f97316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Button glow effect */
+    .btn-orange-glow {
+      box-shadow: 0 4px 22px rgba(255, 158, 59, 0.38);
+    }
+    .btn-orange-glow:hover {
+      box-shadow: 0 6px 28px rgba(255, 158, 59, 0.52);
+    }
+  </style>
+</head>
+<body class="bg-[#edf0f4] text-neutral-800 font-sans antialiased selection:bg-orange-500 selection:text-white p-3 sm:p-6 lg:p-10 min-h-screen flex flex-col items-center justify-center">
+
+  <!-- ======================================================== -->
+  <!-- MAIN WRAPPER CONTAINER (FRAME MATCHING DRIBBBLE SHOT) -->
+  <!-- ======================================================== -->
+  <div class="w-full max-w-[1340px] bg-white rounded-[32px] md:rounded-[40px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.18)] overflow-hidden border border-neutral-300/60 transition-all duration-300">
+    
+    <!-- ========================================== -->
+    <!-- HERO SECTION (DARK WITH WARM GLOW & FLUTES) -->
+    <!-- ========================================== -->
+    <header class="relative hero-ribbed-container text-white pt-8 pb-20 px-6 sm:px-10 lg:px-14 overflow-hidden border-b border-neutral-800">
+      
+      <!-- Top Navigation -->
+      <nav class="relative z-20 max-w-6xl mx-auto flex items-center justify-between">
+        
+        <!-- Brand Logo: Promptly AI -->
+        <a href="#" class="text-2xl font-bold tracking-tight text-white hover:opacity-90 transition-opacity">
+          Promptly AI
+        </a>
+
+        <!-- Center: Capsule Menu -->
+        <div class="hidden md:flex items-center bg-[#151518]/90 backdrop-blur-md p-1.5 rounded-full border border-white/10 shadow-lg text-xs font-medium">
+          <a href="#products" class="bg-[#242428] text-white px-4 py-1.5 rounded-full shadow-sm">
+            Products
+          </a>
+          <a href="#customer-stories" class="text-neutral-400 hover:text-white px-4 py-1.5 rounded-full transition-colors">
+            Customer Stories
+          </a>
+          <a href="#resources" class="text-neutral-400 hover:text-white px-4 py-1.5 rounded-full transition-colors">
+            Resources
+          </a>
+          <a href="#pricing" class="text-neutral-400 hover:text-white px-4 py-1.5 rounded-full transition-colors">
+            Pricing
+          </a>
+        </div>
+
+        <!-- Right: Auth & Get Started Button -->
+        <div class="flex items-center gap-4 sm:gap-6">
+          <a href="#login" class="text-xs sm:text-sm font-medium text-neutral-300 hover:text-white transition-colors">
+            Login
+          </a>
+          <a href="#get-started" class="bg-[#ff9e3b] hover:bg-[#ffaa4c] text-neutral-950 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full transition-all duration-200 transform hover:scale-105 btn-orange-glow">
+            Get Started
+          </a>
+        </div>
+      </nav>
+
+      <!-- Hero Body Content -->
+      <div class="relative z-10 max-w-4xl mx-auto text-center mt-16 sm:mt-20 lg:mt-24">
+        
+        <!-- Pill Badge: 🪄 AI Powered Writing Tool -->
+        <div class="inline-flex items-center justify-center">
+          <div class="inline-flex items-center gap-2 bg-[#211a17]/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-orange-500/20 text-xs font-medium text-neutral-300 shadow-inner">
+            <span class="text-sm">🪄</span>
+            <span>AI Powered Writing Tool</span>
+          </div>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="mt-7 text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-extrabold tracking-tight text-white leading-[1.12]">
+          Write High Converting<br />
+          Marketing Content With <span class="ai-gradient">AI</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="mt-5 text-sm sm:text-base md:text-lg text-neutral-400 max-w-xl mx-auto font-normal leading-relaxed">
+          Generate blog posts, ads, emails and social media captions instantly using powerful AI technology.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#generator" class="w-full sm:w-auto bg-[#ff9e3b] hover:bg-[#ffaa4c] text-neutral-950 font-semibold text-sm sm:text-base px-7 py-3 rounded-full transition-all duration-200 transform hover:-translate-y-0.5 btn-orange-glow text-center">
+            Start Writing Free
+          </a>
+          <button id="openDemoBtn" class="w-full sm:w-auto bg-transparent hover:bg-white/[0.08] text-white font-medium text-sm sm:text-base px-7 py-3 rounded-full border border-white/25 hover:border-white/50 transition-all duration-200 text-center">
+            Watch Demo
+          </button>
+        </div>
+
+        <!-- Social Proof Stats -->
+        <div class="mt-20 pt-2 max-w-3xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-400 font-medium mb-6">
+            Trusted by 20,000+ marketers
+          </p>
+
+          <!-- Integration Brand Logos Row (9 logos matching the design) -->
+          <div class="flex flex-wrap items-center justify-center gap-7 sm:gap-9 md:gap-11 opacity-90 hover:opacity-100 transition-opacity">
+            
+            <!-- 1. Notion -->
+            <div class="flex items-center gap-2 text-white cursor-default">
+              <div class="w-5 h-5 bg-white text-black font-serif font-black rounded-sm flex items-center justify-center text-xs leading-none">
+                N
+              </div>
+              <span class="text-sm font-semibold tracking-tight">Notion</span>
+            </div>
+
+            <!-- 2. Shopify -->
+            <div class="flex items-center gap-1.5 text-white cursor-default">
+              <svg class="w-5 h-5 text-[#96bf48] fill-current" viewBox="0 0 24 24">
+                <path d="M19.78 6.55c-.06-.41-.45-.69-.87-.66-.42.03-3.66.25-3.66.25s-2.43-2.42-2.73-2.71c-.3-.29-.86-.2-1.08-.09-.04.02-.79.37-2.02.97-.24-.62-.62-1.35-1.2-1.89C6.91 1.22 5.56 1.09 4.8 1.48c-.99.5-1.39 1.63-1.42 2.89-.03 1.3.4 2.87 1.25 4.34L1.87 9.87c-.38.19-.51.66-.31 1.03l4.63 8.78c.2.37.66.51 1.03.32l10.96-5.83c.37-.2.52-.66.32-1.03l-1.72-3.26 2.76-.73c.4-.11.67-.5.6-1.04l-.36-2.66zm-5.87.64l-2.09.56V5.41c.74-.36 1.49-.72 2.09-.99v2.77zm-3.34-.89v2.96l-3.3.88c-.34-.94-.57-1.87-.62-2.65-.05-.9.18-1.58.55-1.85.31-.22.84-.23 1.64.12.59.26 1.22.62 1.73.54zm.64 4.19l2.84-.76.71 1.34-3.55 1.89v-2.47z"/>
+              </svg>
+              <span class="text-sm font-semibold tracking-tight">shopify</span>
+            </div>
+
+            <!-- 3. Canva -->
+            <div class="flex items-center text-[#00c4cc] cursor-default">
+              <span class="text-base font-serif italic font-extrabold tracking-normal">Canva</span>
+            </div>
+
+            <!-- 4. Mailchimp -->
+            <div class="flex items-center gap-1.5 text-white cursor-default">
+              <svg class="w-5 h-5 text-[#ffe01b] fill-current" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15.5c-2.48 0-4.5-1.57-4.5-3.5 0-1.38 1.02-2.56 2.5-3.08V10c0-1.1.9-2 2-2s2 .9 2 2v.92c1.48.52 2.5 1.7 2.5 3.08 0 1.93-2.02 3.5-4.5 3.5z"/>
+              </svg>
+              <span class="text-sm font-semibold lowercase tracking-tight">mailchimp</span>
+            </div>
+
+            <!-- 5. Stripe -->
+            <div class="flex items-center text-white cursor-default">
+              <span class="text-base font-bold tracking-tight text-[#635bff]">stripe</span>
+            </div>
+
+            <!-- 6. Zapier -->
+            <div class="flex items-center gap-1 text-white cursor-default">
+              <div class="w-2.5 h-1 bg-[#ff4a00] rounded-sm"></div>
+              <span class="text-sm font-bold tracking-tight text-white">_zapier</span>
+            </div>
+
+            <!-- 7. Webflow -->
+            <div class="flex items-center gap-1.5 text-white cursor-default">
+              <span class="text-sm font-black text-[#146ef5]">W</span>
+              <span class="text-sm font-semibold tracking-tight">Webflow</span>
+            </div>
+
+            <!-- 8. Airtable -->
+            <div class="flex items-center gap-1.5 text-white cursor-default">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                <path d="M11 2L2 6.5L11 11V2Z" fill="#FCB400"/>
+                <path d="M13 2L22 6.5L13 11V2Z" fill="#18BFFF"/>
+                <path d="M11.5 13L2.5 8.5V18.5L11.5 23V13Z" fill="#2D7FF9"/>
+                <path d="M12.5 13L21.5 8.5V18.5L12.5 23V13Z" fill="#E92C4C"/>
+              </svg>
+              <span class="text-sm font-semibold tracking-tight">Airtable</span>
+            </div>
+
+            <!-- 9. Slack -->
+            <div class="flex items-center gap-1.5 text-white cursor-default">
+              <div class="w-4 h-4 grid grid-cols-2 gap-0.5">
+                <div class="bg-[#e01e5a] rounded-sm"></div>
+                <div class="bg-[#36c5f0] rounded-sm"></div>
+                <div class="bg-[#2eb67d] rounded-sm"></div>
+                <div class="bg-[#ecb22e] rounded-sm"></div>
+              </div>
+              <span class="text-sm font-semibold tracking-tight">slack</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+
+    <!-- ========================================== -->
+    <!-- SECTION 2: PROBLEM (DOT GRID WHITE CANVAS) -->
+    <!-- ========================================== -->
+    <section class="relative dot-matrix-pattern py-20 px-6 sm:px-10 lg:px-16 text-neutral-900 border-b border-neutral-200">
+      
+      <div class="max-w-4xl mx-auto text-center">
+        
+        <!-- Pill Badge: 💬 Problem -->
+        <div class="inline-flex items-center justify-center">
+          <div class="inline-flex items-center gap-2 bg-[#fffaf5] border border-orange-200/90 text-neutral-800 px-4 py-1.5 rounded-full text-xs font-semibold shadow-sm">
+            <i data-lucide="message-square" class="w-3.5 h-3.5 text-orange-500 fill-orange-50"></i>
+            <span>Problem</span>
+          </div>
+        </div>
+
+        <!-- Problem Headline -->
+        <h2 class="mt-5 text-3xl sm:text-4xl md-[44px] font-extrabold tracking-tight text-neutral-900">
+          Struggling to Create Content Consistently?
+        </h2>
+
+        <!-- Problem Subheadline -->
+        <p class="mt-4 text-sm sm:text-base md:text-lg text-neutral-500 max-w-xl mx-auto font-normal leading-relaxed">
+          Writing marketing content takes time, creativity and effort. Our AI helps you create better content faster.
+        </p>
+
+        <!-- Feature Pain Points Grid -->
+        <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          
+          <div class="bg-white p-7 rounded-2xl border border-neutral-200 shadow-sm hover:border-orange-300 hover:shadow-md transition-all duration-200 group">
+            <div class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+              <i data-lucide="timer" class="w-5 h-5 stroke-[2.2]"></i>
+            </div>
+            <h3 class="text-base font-bold text-neutral-900 mb-2">Hours Lost on Drafts</h3>
+            <p class="text-sm text-neutral-500 leading-relaxed">
+              Teams spend 15+ hours each week staring at blank pages trying to ideate fresh hooks and angles.
+            </p>
+          </div>
+
+          <div class="bg-white p-7 rounded-2xl border border-neutral-200 shadow-sm hover:border-orange-300 hover:shadow-md transition-all duration-200 group">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+              <i data-lucide="bar-chart-2" class="w-5 h-5 stroke-[2.2]"></i>
+            </div>
+            <h3 class="text-base font-bold text-neutral-900 mb-2">Low Conversion Rates</h3>
+            <p class="text-sm text-neutral-500 leading-relaxed">
+              Generic copy fails to stimulate emotion. Traffic leaves without taking action, driving ad costs up.
+            </p>
+          </div>
+
+          <div class="bg-white p-7 rounded-2xl border border-neutral-200 shadow-sm hover:border-orange-300 hover:shadow-md transition-all duration-200 group">
+            <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+              <i data-lucide="split" class="w-5 h-5 stroke-[2.2]"></i>
+            </div>
+            <h3 class="text-base font-bold text-neutral-900 mb-2">Fragmented Voice</h3>
+            <p class="text-sm text-neutral-500 leading-relaxed">
+              Managing 6+ channels leads to disjointed tone, confused customers, and fractured brand identity.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- SECTION 3: LIVE AI GENERATOR PLAYGROUND -->
+    <!-- ========================================== -->
+    <section id="generator" class="bg-[#0b0b0e] text-white py-20 px-6 sm:px-10 lg:px-16 relative overflow-hidden">
+      
+      <div class="max-w-5xl mx-auto relative z-10">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <div class="inline-flex items-center gap-2 bg-white/[0.06] border border-white/10 px-3.5 py-1.5 rounded-full text-xs font-medium text-amber-300 mb-4">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span>Interactive Demo</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Test the AI Copy Engine Live
+          </h2>
+          <p class="mt-3 text-neutral-400 text-sm sm:text-base">
+            Select a format below and see how Promptly AI transforms raw ideas into ready-to-publish campaigns.
+          </p>
+        </div>
+
+        <div class="bg-[#141418] border border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+          
+          <!-- Format Selector Pills -->
+          <div class="flex flex-wrap items-center gap-2 pb-5 border-b border-neutral-800" id="formatTabs">
+            <button class="format-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-[#ff9e3b] text-neutral-950" data-type="ad">
+              Facebook / IG Ad
+            </button>
+            <button class="format-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-neutral-900 text-neutral-400 hover:text-white" data-type="email">
+              Sales Email
+            </button>
+            <button class="format-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-neutral-900 text-neutral-400 hover:text-white" data-type="headline">
+              Landing Page Hero
+            </button>
+            <button class="format-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-neutral-900 text-neutral-400 hover:text-white" data-type="social">
+              Viral Thread Hook
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6">
+            
+            <!-- Input & Configuration -->
+            <div class="lg:col-span-5 space-y-4">
+              <div>
+                <label class="block text-xs font-semibold text-neutral-400 mb-2 uppercase tracking-wider">
+                  Product / Service
+                </label>
+                <input 
+                  type="text" 
+                  id="productInput"
+                  value="Aura Workspace: Ergonomic smart desk with motorized preset memory"
+                  class="w-full bg-[#1c1c22] border border-neutral-700/80 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-amber-400 transition-colors"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-neutral-400 mb-2 uppercase tracking-wider">
+                  Tone Presets
+                </label>
+                <div class="grid grid-cols-3 gap-2">
+                  <button class="tone-btn active px-3 py-2 rounded-lg text-xs font-medium border border-amber-400/80 bg-amber-400/10 text-amber-300">
+                    Persuasive
+                  </button>
+                  <button class="tone-btn px-3 py-2 rounded-lg text-xs font-medium border border-neutral-700 bg-neutral-800/40 text-neutral-300 hover:border-neutral-600">
+                    Bold & Punchy
+                  </button>
+                  <button class="tone-btn px-3 py-2 rounded-lg text-xs font-medium border border-neutral-700 bg-neutral-800/40 text-neutral-300 hover:border-neutral-600">
+                    Friendly & Warm
+                  </button>
+                </div>
+              </div>
+
+              <button 
+                id="generateBtn"
+                class="w-full bg-[#ff9e3b] hover:bg-[#ffaa4c] text-neutral-950 font-bold py-3.5 px-4 rounded-xl text-sm transition-all transform active:scale-[0.99] flex items-center justify-center gap-2 btn-orange-glow mt-4"
+              >
+                <i data-lucide="sparkles" class="w-4 h-4 fill-neutral-950"></i>
+                <span id="btnText">Generate Marketing Copy</span>
+              </button>
+
+              <div class="flex items-center justify-between text-xs text-neutral-500 pt-1 px-1">
+                <span class="flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+                  Trained on 500k+ ads
+                </span>
+                <span>Latency ~0.3s</span>
+              </div>
+            </div>
+
+            <!-- Output Preview Box -->
+            <div class="lg:col-span-7 bg-[#0c0c10] border border-neutral-800 rounded-2xl p-5 flex flex-col justify-between min-h-[250px]">
+              <div>
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-neutral-800 text-xs">
+                  <div class="flex items-center gap-2 text-neutral-400 font-medium">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span id="previewLabel">High-Converting Ad Hook & Copy</span>
+                  </div>
+                  <button id="copyBtn" class="text-neutral-400 hover:text-white flex items-center gap-1.5 px-2.5 py-1 rounded bg-neutral-800/60 hover:bg-neutral-800 transition-colors">
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                    <span id="copyFeedback">Copy Text</span>
+                  </button>
+                </div>
+
+                <div id="outputContent" class="text-sm text-neutral-200 leading-relaxed whitespace-pre-line space-y-3 font-normal">
+                  <p class="font-bold text-base text-amber-300">🔥 Stop letting back stiffness sabotage your deep focus hours.</p>
+                  <p>Meet Aura Workspace — the ergonomic motorized desk engineered for high-output creators who refuse to sacrifice health for hustle.</p>
+                  <p class="text-neutral-400 text-xs italic bg-neutral-900/80 p-3 rounded-lg border-l-2 border-amber-400">
+                    👉 4-stage motorized whisper presets<br />
+                    👉 Solid sustainable walnut finish<br />
+                    👉 100-Day Risk-Free Trial with Free Home Setup
+                  </p>
+                  <p class="font-semibold text-white">Claim your $120 Launch Discount today before batch #2 sells out. Link in bio ⚡</p>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-neutral-800 flex items-center justify-between text-xs text-neutral-500">
+                <span class="flex items-center gap-1.5 text-neutral-400">
+                  <i data-lucide="trending-up" class="w-3.5 h-3.5 text-amber-400"></i>
+                  Estimated CTR: <strong class="text-neutral-200">4.8%</strong> (Avg: 1.4%)
+                </span>
+                <span class="text-amber-400 font-semibold cursor-pointer hover:underline flex items-center gap-1" onclick="regenerateCopy()">
+                  <i data-lucide="refresh-cw" class="w-3 h-3"></i> Next Variation
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- SECTION 4: SPEED & INTEGRATION FEATURES -->
+    <!-- ========================================== -->
+    <section id="products" class="bg-white py-20 px-6 sm:px-10 lg:px-16 text-neutral-900 border-b border-neutral-200">
+      <div class="max-w-6xl mx-auto">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 bg-neutral-100 text-neutral-800 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-4">
+            <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500 fill-amber-500"></i>
+            <span>Built For Modern Growth</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900">
+            Engineered for Marketers, Not Engineers
+          </h2>
+          <p class="mt-3 text-neutral-500 text-sm sm:text-base">
+            No complex prompt engineering required. Every template is tuned for immediate return on ad spend.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="p-8 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-neutral-300 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
+              <i data-lucide="sparkle" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-neutral-900 mb-2">Psychological Frameworks</h3>
+            <p class="text-sm text-neutral-600 leading-relaxed">
+              Automatically implements proven persuasive formulas like PAS (Problem-Agitate-Solve), AIDA, and Before-After-Bridge.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-neutral-300 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-6">
+              <i data-lucide="share-2" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-neutral-900 mb-2">1-Click Channel Export</h3>
+            <p class="text-sm text-neutral-600 leading-relaxed">
+              Push approved drafts straight into Shopify product listings, Mailchimp newsletters, Webflow CMS, or Notion databases.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-neutral-300 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-neutral-900 mb-2">Brand Voice Memory</h3>
+            <p class="text-sm text-neutral-600 leading-relaxed">
+              Upload your style guide or existing top posts. Promptly AI matches your signature vocabulary and brand personality.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- SECTION 5: CALL TO ACTION -->
+    <!-- ========================================== -->
+    <section id="pricing" class="relative hero-ribbed-container text-white py-20 px-6 sm:px-10 lg:px-16 text-center overflow-hidden">
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          Start Writing High-Converting<br />Content in 60 Seconds
+        </h2>
+        <p class="mt-4 text-neutral-300 text-sm sm:text-base max-w-lg mx-auto">
+          Free 14-day trial with 10,000 words included. No credit card required.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#generator" class="w-full sm:w-auto bg-[#ff9e3b] hover:bg-[#ffaa4c] text-neutral-950 font-bold px-8 py-3 rounded-full text-sm sm:text-base transition-all btn-orange-glow">
+            Get Started Free
+          </a>
+          <a href="#customer-stories" class="w-full sm:w-auto bg-transparent hover:bg-white/10 text-white font-medium px-8 py-3 rounded-full text-sm sm:text-base border border-white/20 transition-all">
+            See Customer Case Studies
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- FOOTER -->
+    <!-- ========================================== -->
+    <footer class="bg-[#070709] text-neutral-400 py-10 px-6 sm:px-10 lg:px-14 border-t border-neutral-800 text-xs">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="text-base font-bold text-white tracking-tight">Promptly AI</span>
+          <span class="text-neutral-600">|</span>
+          <p class="text-neutral-500">© 2026 Promptly AI, Inc. Minimalist HTML & CSS.</p>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-white transition-colors">Privacy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms</a>
+          <a href="#" class="hover:text-white transition-colors">Security</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- VIDEO DEMO MODAL POPUP -->
+  <!-- ========================================== -->
+  <div id="demoModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-[#141418] border border-neutral-700 rounded-2xl max-w-xl w-full p-6 text-white relative shadow-2xl">
+      <div class="flex items-center justify-between pb-3 border-b border-neutral-800">
+        <span class="text-sm font-semibold text-neutral-300">Promptly AI Product Walkthrough</span>
+        <button id="closeDemoBtn" class="text-neutral-400 hover:text-white p-1 rounded-lg hover:bg-neutral-800">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      
+      <div class="mt-4 aspect-video bg-neutral-900 rounded-xl overflow-hidden relative flex flex-col items-center justify-center border border-neutral-800 group">
+        <div class="w-14 h-14 rounded-full bg-[#ff9e3b] text-neutral-950 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform cursor-pointer">
+          <i data-lucide="play" class="w-6 h-6 fill-neutral-950 translate-x-0.5"></i>
+        </div>
+        <p class="text-neutral-400 text-xs mt-3">Watch how teams draft 30 variations in 60 seconds</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT LOGIC -->
+  <!-- ========================================== -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Data for interactive generator
+    const templates = {
+      ad: {
+        label: "High-Converting Ad Hook & Copy",
+        variations: [
+          `🔥 Stop letting back stiffness sabotage your deep focus hours.\n\nMeet Aura Workspace — the ergonomic motorized desk engineered for high-output creators who refuse to sacrifice health for hustle.\n\n👉 4-stage motorized whisper presets\n👉 Solid sustainable walnut finish\n👉 100-Day Risk-Free Trial with Free Home Setup\n\nClaim your $120 Launch Discount today before batch #2 sells out. Link in bio ⚡`,
+          `⚠️ Most creators lose 3+ hours a day to posture fatigue without noticing.\n\nAura Workspace automatically shifts between your calibrated sitting and standing heights throughout your workday.\n\nOver 12,000+ designers and founders have made the switch.\n\n⚡ Upgrade your setup with 15% off this week only.`,
+        ]
+      },
+      email: {
+        label: "Subject Line & High-Open Sales Email",
+        variations: [
+          `Subject: Quick question about your desk setup, [First Name]?\n\nHey [First Name],\n\nIf you find yourself slouching by 3 PM every single day, you're not alone. Most desks force your spine into static compression.\n\nWe engineered Aura Workspace with automated micromovements so you stay in effortless flow all day.\n\nCan I send you a 60-second video of how our ergonomic presets work?\n\nBest,\nMarcus | Promptly AI Team`,
+          `Subject: The #1 thing quietly draining your daily energy...\n\nHi [First Name],\n\nIt’s not lack of sleep. It’s prolonged static sitting.\n\nAura Workspace helps high-performers alternate effortlessly without breaking deep focus.\n\nReady to transform your creative space? Check out our case studies here.`
+        ]
+      },
+      headline: {
+        label: "Hero Headlines & Subheaders",
+        variations: [
+          `⚡ Headline Option 1:\n"Work Without Strain. The Smart Standing Desk Designed for Deep Thinkers."\n\n⚡ Subheader:\nEngineered with silent dual-motors, four custom presets, and sustainable hardwood surfaces to elevate your physical well-being.\n\n⚡ Primary CTA Button:\n"Configure Your Desk — 100 Days Free Trial"`,
+          `⚡ Headline Option 2:\n"Your Back Will Thank You. Your Output Will Double."\n\n⚡ Subheader:\nAura Workspace adapts seamlessly to your natural rhythm so fatigue never interrupts your best work.`
+        ]
+      },
+      social: {
+        label: "Viral X / Twitter Thread Starter",
+        variations: [
+          `Your physical workspace determines 70% of your daily creative stamina.\n\nHere are 3 subtle desk upgrades that took my output from sluggish to unstoppable (and saved my lower back): 🧵👇\n\n1/ Automated height alternation with @AuraWorkspace...\n2/ Warm ambient lighting at 3500K...\n3/ Monitor arm calibrated to exact eye level.`,
+          `Unpopular truth: You don’t need another productivity app.\n\nYou need a workstation that doesn’t compress your lumbar spine for 9 hours straight.\n\nHere’s what changed when I switched to Aura Workspace: ⬇️`
+        ]
+      }
+    };
+
+    let currentType = 'ad';
+    let variationIndex = 0;
+
+    const formatButtons = document.querySelectorAll('.format-btn');
+    const previewLabel = document.getElementById('previewLabel');
+    const outputContent = document.getElementById('outputContent');
+
+    formatButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        formatButtons.forEach(b => {
+          b.className = 'format-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-neutral-900 text-neutral-400 hover:text-white';
+        });
+        btn.className = 'format-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-[#ff9e3b] text-neutral-950';
+        currentType = btn.dataset.type;
+        variationIndex = 0;
+        updatePreview();
+      });
+    });
+
+    const toneButtons = document.querySelectorAll('.tone-btn');
+    toneButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        toneButtons.forEach(b => {
+          b.className = 'tone-btn px-3 py-2 rounded-lg text-xs font-medium border border-neutral-700 bg-neutral-800/40 text-neutral-300 hover:border-neutral-600';
+        });
+        btn.className = 'tone-btn active px-3 py-2 rounded-lg text-xs font-medium border border-amber-400/80 bg-amber-400/10 text-amber-300';
+      });
+    });
+
+    function updatePreview() {
+      const data = templates[currentType];
+      previewLabel.innerText = data.label;
+      const text = data.variations[variationIndex % data.variations.length];
+      outputContent.innerText = text;
+    }
+
+    function regenerateCopy() {
+      variationIndex++;
+      updatePreview();
+    }
+
+    const generateBtn = document.getElementById('generateBtn');
+    const btnText = document.getElementById('btnText');
+    generateBtn.addEventListener('click', () => {
+      btnText.innerText = 'Synthesizing with AI...';
+      generateBtn.classList.add('opacity-80');
+      
+      setTimeout(() => {
+        regenerateCopy();
+        btnText.innerText = 'Generate Marketing Copy';
+        generateBtn.classList.remove('opacity-80');
+      }, 300);
+    });
+
+    const copyBtn = document.getElementById('copyBtn');
+    const copyFeedback = document.getElementById('copyFeedback');
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(outputContent.innerText);
+      copyFeedback.innerText = 'Copied!';
+      setTimeout(() => {
+        copyFeedback.innerText = 'Copy Text';
+      }, 2000);
+    });
+
+    // Modal logic
+    const demoModal = document.getElementById('demoModal');
+    const openDemoBtn = document.getElementById('openDemoBtn');
+    const closeDemoBtn = document.getElementById('closeDemoBtn');
+
+    openDemoBtn.addEventListener('click', () => {
+      demoModal.classList.remove('opacity-0', 'pointer-events-none');
+    });
+
+    closeDemoBtn.addEventListener('click', () => {
+      demoModal.classList.add('opacity-0', 'pointer-events-none');
+    });
+
+    demoModal.addEventListener('click', (e) => {
+      if (e.target === demoModal) {
+        demoModal.classList.add('opacity-0', 'pointer-events-none');
+      }
+    });
+  </script>
+</body>
+</html>
